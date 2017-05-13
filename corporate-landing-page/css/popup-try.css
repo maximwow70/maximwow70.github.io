@@ -1,0 +1,102 @@
+.popup-try-close{
+	z-index: 0;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.popup-try{
+	z-index: 0;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	
+	padding: 5%;
+	background-color: #1f2442;
+	text-align: center;
+	color: #ff6d6d;
+
+	
+	opacity: 0;
+
+	-moz-transition: 0.7s;
+	-ms-transition: 0.7s;
+	-webkit-transition: 0.7s;
+	-o-transition: 0.7s;
+	transition: 0.7s;
+}
+	.popup-try form h3{
+		margin-bottom: 20px;
+		font-size: 30px;
+		letter-spacing: 1px;
+	}
+	.popup-try input,
+	.popup-try button{
+		height: 50px;
+		width: 215px;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
+		border-radius: 5px;
+
+		padding: 10px 25px;
+		font-family: Exo_r;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+	.popup-try input{
+		margin: 0 20px 30px 20px;
+		display: inline-block;
+		vertical-align: top;
+		
+		border: 2px solid #b8b8bf;
+	}
+	.popup-try input:focus{
+		border-color: #ff6d6d;
+	}
+	.popup-try input[type=submit],
+	.popup-try button{
+		background-color: #ff6d6d;
+		color: #FFFFFF;
+		border: none;
+		cursor: pointer;
+
+		-moz-transition: 0.7s;
+		-ms-transition: 0.7s;
+		-webkit-transition: 0.7s;
+		-o-transition: 0.7s;
+		transition: 0.7s;
+	}
+	.popup-try button{
+		
+	}
+	.popup-try input[type=submit]:hover,
+	.popup-try button:hover{
+		-moz-box-shadow: 0 0 10px #ff6d6d;
+		-ms-box-shadow: 0 0 10px #ff6d6d;
+		-webkit-box-shadow: 0 0 10px #ff6d6d;
+		-o-box-shadow: 0 0 10px #ff6d6d;
+		box-shadow: 0 0 10px #ff6d6d;
+	}
+
+.popup-try-close.open{
+	z-index: 999;
+}
+.popup-try.open{
+	z-index: 1000;
+	opacity: 1;
+}
+
+@media screen and (max-width: 600px){
+	.popup-try{
+		width: 100%;
+	}
+}
