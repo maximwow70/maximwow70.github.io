@@ -1,0 +1,34 @@
+@font-face {
+  font-family: exo_r;
+  src: url(../fonts/Exo2Regular.ttf); }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: normal; }
+
+.sigma {
+  min-width: 320px;
+  padding: 0 5%;
+  font-family: "Open Sans", exo_r, Arial, sans-serif; }
+  .sigma-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e7e7e7; }
+  .sigma-title {
+    margin-bottom: 1px; }
+    .sigma-title .title {
+      min-height: 615px; }
+  .sigma-features {
+    margin-bottom: 1px; }
+  .sigma-gallery {
+    margin-bottom: 1px; }
+  .sigma-about {
+    margin-bottom: 1px; }
+  .sigma-contact {
+    margin-bottom: 40px; }
+  .sigma-footer {
+    border-top: 1px solid #e7e7e7; }

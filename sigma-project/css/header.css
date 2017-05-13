@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 155px;
+  color: #bfbfbf; }
+  @media screen and (max-width: 850px) {
+    .header {
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: center;
+      min-height: 200px; } }

@@ -1,0 +1,17 @@
+.logo{
+    text-align: left;
+    &-name{
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #333;
+    }
+    &-description{
+        font-size: 14px;
+        color: #888;
+    }
+    @media screen and (max-width: 850px){
+        &{
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.about_note {
+  padding: 30px 20px; }
+  .about_note--light {
+    color: #FFF; }
+  .about_note--dark {
+    color: #333; }
+  .about_note--design {
+    background-color: #e3e7e8; }
+  .about_note--coding {
+    background-color: #989898; }
+  .about_note--mobile {
+    background-color: #676767; }
+  .about_note--left_column {
+    background-color: #edbbee; }
+  .about_note--right_column {
+    background-color: #92c4f7; }
+  .about_note--team {
+    background-color: #ab5522; }
+  .about_note--history {
+    background-color: #2287bb; }
+  .about_note--managment {
+    background-color: #459967; }
+  .about_note--career {
+    background-color: #a4a530; }
+  .about_note-name {
+    margin-bottom: 25px;
+    font-size: 24px; }
+  .about_note-description {
+    margin-bottom: 1rem;
+    font-size: 16px;
+    line-height: 28px; }
+  .about_note-btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    color: #FFF;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.7s; }
+    .about_note-btn:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+    .about_note-btn--detail {
+      background-color: #0175d8; }
+    .about_note-btn--more_info {
+      background-color: #de534c; }

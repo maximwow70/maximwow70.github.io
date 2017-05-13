@@ -1,0 +1,29 @@
+$hover-color: #0275d8;
+.navigation{
+    font-size: 18px;
+    color: rgba(0, 0, 0, .3);
+    &-list{
+        margin-left: 40px;
+        text-decoration: none;
+        color: inherit;
+
+        transition: color 0.7s;
+        &:first-child{
+            margin-left: 0;
+        }
+        &:hover{
+            color: $hover-color;
+        }
+    }
+    @media screen and (max-width: 850px){
+        &{
+            &-list{
+                display: inline-block;
+                margin: 0 20px 10px 20px;
+                &:first-child{
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}

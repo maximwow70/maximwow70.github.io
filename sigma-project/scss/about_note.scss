@@ -1,0 +1,68 @@
+.about_note{
+    padding: 30px 20px;
+    &--light{
+        color: #FFF;
+    }
+    &--dark{
+        color: #333;
+    }
+    &--design{
+        background-color: #e3e7e8;
+    }
+    &--coding{
+        background-color: #989898;
+    }
+    &--mobile{
+        background-color: #676767;
+    }
+    &--left_column{
+        background-color: #edbbee;
+    }
+    &--right_column{
+        background-color: #92c4f7;
+    }
+    &--team{
+        background-color: #ab5522;
+    }
+    &--history{
+        background-color: #2287bb;
+    }
+    &--managment{
+        background-color: #459967;
+    }
+    &--career{
+        background-color: #a4a530;
+    }
+    &-name{
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+    &-description{
+        margin-bottom: 1rem;
+        font-size: 16px;
+        line-height: 28px;
+    }
+    &-btn_container{
+
+    }
+    &-btn{
+        padding: 0.75rem 1.25rem;
+        border-radius: 4px;
+        font-size: 1.25rem;
+        color: #FFF;
+        outline: none;
+        cursor: pointer;
+
+        transition: box-shadow 0.7s;
+        &:hover{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        &--detail{
+            background-color: #0175d8;
+        }
+        &--more_info{
+            background-color: #de534c;
+        }
+    }
+}

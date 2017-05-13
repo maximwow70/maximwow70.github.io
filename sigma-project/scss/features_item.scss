@@ -1,0 +1,13 @@
+.features_item{
+    padding: 20% 10%;
+    &-icon{
+        font-size: 60px;
+    }
+    &-name{
+        line-height: 80px;
+        font-size: 2rem;
+    }
+    &-description{
+        line-height: 1.75rem;
+    }
+}

@@ -1,0 +1,71 @@
+.contact_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    &-column{
+        box-sizing: border-box;
+        padding: 0 15px;
+        width: 50%;
+    }
+    &-label{
+        display: inline-block;
+        margin-bottom: 15px;
+        &--check_robot{
+            cursor: pointer;
+        }
+    }
+    &-control{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 25px;
+        padding: .375rem .75rem;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        font-family: inherit;
+        font-size: inherit;
+        outline: none;
+
+        transition: border-color 0.7s;
+        &:focus{
+            border-color: #0275d8;
+        }
+        &--message{
+            min-height: 110px;
+            line-height: 1.6rem;
+        }
+        &--check_robot{
+            width: auto;
+        }
+    }
+    &-btn_container{
+    }
+    &-btn{
+        padding: 0.75rem 1.25rem;
+        border-radius: 4px;
+        font-size: 1.25rem;
+        color: #FFF;
+        outline: none;
+        cursor: pointer;
+
+        transition: box-shadow 0.7s;
+        &:hover{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        &--submit{
+            background-color: #5cb85c;
+        }
+    }
+    @media screen and (max-width: 950px){
+        &-column{
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: 750px){
+        &-column{
+            width: 100%;
+        }
+    }
+}

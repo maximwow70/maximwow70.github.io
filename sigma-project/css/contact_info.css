@@ -1,0 +1,21 @@
+.contact_info-title {
+  margin-bottom: 30px;
+  font-size: 28px; }
+
+.contact_info-note {
+  margin-bottom: 40px;
+  line-height: 28px; }
+
+.contact_info-email {
+  margin-bottom: 40px; }
+
+.contact_info-icon {
+  min-width: 50px;
+  font-size: 30px; }
+
+.contact_phone, .contact_email {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.7s; }
+  .contact_phone:hover, .contact_email:hover {
+    color: #0275d8; }

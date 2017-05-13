@@ -1,0 +1,18 @@
+.navigation {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.3); }
+  .navigation-list {
+    margin-left: 40px;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.7s; }
+    .navigation-list:first-child {
+      margin-left: 0; }
+    .navigation-list:hover {
+      color: #0275d8; }
+  @media screen and (max-width: 850px) {
+    .navigation-list {
+      display: inline-block;
+      margin: 0 20px 10px 20px; }
+      .navigation-list:first-child {
+        margin-left: 20px; } }

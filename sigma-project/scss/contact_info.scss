@@ -1,0 +1,29 @@
+$hover-color: #0275d8;
+.contact_info{
+    &-title{
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+    &-note{
+        margin-bottom: 40px;
+        line-height: 28px;
+    }
+    &-email{
+        margin-bottom: 40px;
+    }
+    &-phone{
+    }
+    &-icon{
+        min-width: 50px;
+        font-size: 30px;
+    }
+}
+.contact_phone, .contact_email{
+    text-decoration: none;
+    color: inherit;
+
+    transition: color 0.7s;
+    &:hover{
+        color: $hover-color;
+    }
+}

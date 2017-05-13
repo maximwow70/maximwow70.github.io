@@ -1,0 +1,19 @@
+.about{
+    &-title{
+        margin-bottom: 1px;
+        .title{
+            min-height: 335px;
+            /*
+            &-description{
+                &-name{
+                    font-size: 28px;
+                }
+                &-note{
+                    font-size: 16px;
+                    line-height: 28px;
+                }
+            }
+            */
+        }
+    }
+}
