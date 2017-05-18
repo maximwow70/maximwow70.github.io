@@ -1,0 +1,116 @@
+.select{
+    position: relative;
+
+    display: inline-block;
+
+    height: 42px;
+    box-sizing: border-box;
+
+    color: #FFF;
+    text-align: left;
+
+    &-input, &-btn{
+        display: inline-block;
+        vertical-align: middle;
+
+        box-sizing: border-box;
+        background-color: #3a3f5c;
+        color: #FFF;
+
+        line-height: 42px;
+    }
+    &-input{
+        width: 200px;
+        padding: 0 20px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+
+        outline: none;
+        font-size: 18px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    &-btn{
+        width: 40px;
+        border-left: 2px solid #A1A6BB;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+
+        outline: none;
+
+        text-align: center;
+
+        cursor: pointer;
+    }
+    &-btn_icon{
+        position: relative;
+
+        //transform: translate(-4%, 1%);
+        
+        transition: 0.3s;
+    }
+
+    &-value_list{
+        z-index: 2;
+        position: absolute;
+        bottom: -20px;
+        left: 0; right: 0;
+        transform: translate(0, 100%);
+
+        max-height: 232px;
+        border-radius: 5px;
+        background-color: #FFF;
+ 
+        color: #3a3f5c;
+
+        box-shadow: 0 0 40px rgba(#333, 0.4);
+
+        opacity: 0;
+        height: 0;
+        overflow: auto;
+        transition: 0.3s;
+
+        .ps-scrollbar-y-rail{
+            margin: 10px 0;
+            right: 10px;
+            .ps-scrollbar-y{
+                background-color: #3a3f5c;
+            }
+        }
+    }
+
+    &-value{
+        display: block;
+
+        box-sizing: border-box;
+        width: 100%;
+        padding: 20px;
+        background-color: inherit;
+        outline: none;
+
+        color: inherit;
+        font-size: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: left;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+        &:hover, &--active{
+            background-color: #F1F2F7;
+        }
+    }
+
+    &--active{ 
+        .select-btn_icon{
+            transform: translateX(-2%) rotate(180deg);
+        }
+        .select-value_list{
+            height: auto;
+            opacity: 1;
+        }
+    }
+}

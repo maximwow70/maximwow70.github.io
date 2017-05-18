@@ -1,0 +1,10 @@
+@import 'UI/UI.scss';
+@import './select/select.scss';
+@import './select-number/select-number.scss';
+@import './switch/switch.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
