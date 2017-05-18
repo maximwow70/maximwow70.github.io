@@ -1,11 +1,11 @@
 function initSelect() {
 
-    let selects = document.querySelectorAll('.select');
+    var selects = document.querySelectorAll('.select');
 
-    for (let i = 0; i < selects.length; i++) {
-        let select = selects[i];
-        let input = select.querySelector('.select-input');
-        let btn = select.querySelector('.select-btn');
+    for (var i = 0; i < selects.length; i++) {
+        var select = selects[i];
+        var input = select.querySelector('.select-input');
+        var btn = select.querySelector('.select-btn');
 
         function toggleSelect() {
             select.classList.toggle('select--active');
@@ -15,14 +15,14 @@ function initSelect() {
             toggleSelect();
         });
 
-        let values = select.querySelectorAll('.select-value');
-        for (let j = 0; j < values.length; j++) {
-            let value = values[j].getAttribute('value');
+        var values = select.querySelectorAll('.select-value');
+        for (var j = 0; j < values.length; j++) {
+            var value = values[j].getAttribute('value');
             values[j].innerHTML = value;
 
             values[j].innerHTML = value;
             values[j].addEventListener('click', function () {
-                for (let k = 0; k < values.length; k++) {
+                for (var k = 0; k < values.length; k++) {
                     values[k].classList.remove('select-value--active');
                 }
                 this.classList.add('select-value--active');
