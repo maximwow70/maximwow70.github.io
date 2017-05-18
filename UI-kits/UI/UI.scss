@@ -1,13 +1,23 @@
 .UI{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
 
-    padding: 50px;
+    padding: 50px 0;
+
     &-kit{
+        margin-bottom: 100px;
+
         width: 50%;
 
         text-align: center;
+    }
+
+    @media screen and (max-width: 700px){
+        &-kit{
+            width: 100%;
+        }
     }
 }
