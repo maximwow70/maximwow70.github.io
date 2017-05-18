@@ -21,13 +21,14 @@ function initSelect() {
             values[j].innerHTML = value;
 
             values[j].innerHTML = value;
-            values[j].addEventListener('click', function () {
+            values[j].addEventListener('click', function (event) {
                 for (var k = 0; k < values.length; k++) {
                     values[k].classList.remove('select-value--active');
                 }
                 this.classList.add('select-value--active');
 
-                input.setAttribute('value', value);
+                input.setAttribute('value', event.currentTarget.value);
+                input.value = event.currentTarget.value;
                 toggleSelect();
             });
         }
