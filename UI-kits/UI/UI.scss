@@ -1,0 +1,13 @@
+.UI{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 50px;
+    &-kit{
+        width: 50%;
+
+        text-align: center;
+    }
+}
