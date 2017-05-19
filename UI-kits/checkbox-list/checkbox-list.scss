@@ -1,0 +1,25 @@
+.checkbox_list{
+    display: inline-block;
+    &-checkbox{
+        .checkbox{
+            border-radius: 0;
+        }
+        &:not(:last-child){
+            .checkbox{
+                border-bottom: none;
+            }
+        }
+        &:first-child{
+            .checkbox{
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+        }
+        &:last-child{
+            .checkbox{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+}

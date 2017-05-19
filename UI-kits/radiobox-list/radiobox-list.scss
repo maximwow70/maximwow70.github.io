@@ -1,0 +1,25 @@
+.radiobox_list{
+    display: inline-block;
+    &-radiobox{
+        .radiobox{
+            border-radius: 0;
+        }
+        &:not(:last-child){
+            .radiobox{
+                border-bottom: none;
+            }
+        }
+        &:first-child{
+            .radiobox{
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+        }
+        &:last-child{
+            .radiobox{
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+}
