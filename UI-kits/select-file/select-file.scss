@@ -1,0 +1,115 @@
+.select_file{
+    display: inline-block;
+    
+    width: 500px;
+    height: 300px;
+    
+    &-input{
+        display: none;
+        position: fixed;
+        left: -9999px;
+    }
+
+    &-file_list{
+        position: relative;
+
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 20px 40px;
+        border: 2px dashed #E8E8E8;
+        border-radius: 5px;
+
+        text-align: center;
+
+        .ps-scrollbar-y-rail{
+            margin: 10px 0;
+            right: 10px;
+            .ps-scrollbar-y{
+                background-color: #3a3f5c;
+            }
+        }
+
+    }
+    &-file{
+        margin: 0 20px;
+        display: inline-block;
+        vertical-align: top;
+
+        box-sizing: border-box;
+        width: 40%;
+        height: 75px;
+        padding: 0 20px;
+        background-color: #3a3f5c;
+        border-radius: 5px;
+
+        line-height: 75px;
+        color: #FFF;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+        /*&:last-child{
+            &:after{
+                content: '';
+                clear: both;
+            }
+        }*/
+    }
+    &-btn{
+        display: inline-block;
+
+        width: 160px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #3a3f5c;
+        outline: none;
+
+        line-height: 40px;
+        color: #FFF;
+        font-size: 14px;
+        text-transform: uppercase;
+
+        cursor: pointer;
+
+        &--choose{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            background-color: #4CE1AA;
+            box-shadow: 0 10px 20px rgba(#333, 0.4);
+        }
+        &--new_files{
+            background-color: #4CE1AA;
+        }
+        &--add{
+            background-color: #4CE1AA;
+        }
+        &--remove_files{
+            background-color: #ea4e37;
+        }
+    }
+    &-actions{
+        width: 100%;
+
+        text-align: center;
+    }
+    &-value{
+
+    }
+
+    @media screen and (max-width: 750px){
+        width: 300px;
+        &-file{
+            margin-left: 0;
+            margin-right: 0;
+            
+            width: 100%;
+        }
+    }
+}
