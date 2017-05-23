@@ -6,16 +6,25 @@
     flex-wrap: wrap;
 
     padding: 50px 0;
+    background-color: #DEEAE0;
 
     &-kit{
         margin-bottom: 100px;
 
+        box-sizing: border-box;
         width: 50%;
 
         text-align: center;
 
         &--big{
             width: 100%;
+        }
+        &--padding{
+            padding: 0 5%;
+        }
+        .slider{
+            margin: 0 auto;
+            max-width: 1000px;
         }
     }
 

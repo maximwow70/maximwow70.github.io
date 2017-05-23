@@ -103,4 +103,22 @@ $switch-height: 20px;
             }
         }
     }
+    &--light{
+        height: 36px;
+        background-color: #f1f2f7;
+        &.switch--active{
+            background-color: #f1f2f7;
+        }
+        .switch-status{
+            box-shadow: 0 0 20px rgba(#333, 0.3);
+        }
+        .switch-icon{
+            &--left{
+                color: rgba(#F34F36, 0.7);
+            }
+            &--right{
+                color: rgba(#47D5A3, 0.7);
+            }
+        }
+    }
 }
