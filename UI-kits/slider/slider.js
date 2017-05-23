@@ -1,4 +1,5 @@
 function Slider(slider) {
+    var that = this;
 
     var btnLeft = slider.querySelector('.slider-btn--right');
     var btnRight = slider.querySelector('.slider-btn--left');
@@ -6,14 +7,23 @@ function Slider(slider) {
     btnRight.onclick = function () { };
     btnLeft.onclick = function () { };
 
-    var sliderList = slider.querySelector('.slider-slide_list');
-    sliderList.style.left = 0;
+    var sliderList;
+    var slides;
+    var slideWidth;
+    this.init = function () {
 
-    var slides = slider.querySelectorAll('.slider-slide');
-    var slideWidth = Math.round(
-        parseFloat(getComputedStyle(slides[0]).width) /
-        parseFloat(getComputedStyle(slider).width) * 100
-    );
+        sliderList = slider.querySelector('.slider-slide_list');
+        sliderList.style.left = 0;
+
+        slides = slider.querySelectorAll('.slider-slide');
+        slideWidth = Math.round(
+            parseFloat(getComputedStyle(slides[0]).width) /
+            parseFloat(getComputedStyle(slider).width) * 100
+        );
+
+        manageClick();
+    }
+    this.init();
 
 
     function manageClick() {
@@ -32,7 +42,6 @@ function Slider(slider) {
             btnLeft.classList.remove('slider-btn--disabled');
         }
     }
-
     function onBtnLeftClick() {
         var positionLeft = parseFloat(sliderList.style.left);
         positionLeft -= slideWidth;
@@ -48,21 +57,8 @@ function Slider(slider) {
         manageClick();
     }
 
-    manageClick();
-
     window.addEventListener('resize', function () {
-        btnRight.onclick = function () { };
-        btnLeft.onclick = function () { };
-
-        sliderList = slider.querySelector('.slider-slide_list');
-        sliderList.style.left = 0;
-
-        slides = slider.querySelectorAll('.slider-slide');
-        slideWidth = Math.round(
-            parseFloat(getComputedStyle(slides[0]).width) /
-            parseFloat(getComputedStyle(slider).width) * 100
-        );
-        manageClick();
+        that.init();
     });
 }
 
