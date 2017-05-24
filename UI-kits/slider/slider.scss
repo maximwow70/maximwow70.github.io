@@ -17,8 +17,7 @@
         height: 60px;
         padding: 0 20px;
         border-bottom: 1px solid #E4E7F0;
-    }
-    &-name{
+
         .name{
             display: inline-block;
             vertical-align: middle;
@@ -41,6 +40,9 @@
 
             text-transform: capitalize;
         }
+    }
+    &-name{
+        
     }
     &-actions{
 
@@ -97,6 +99,20 @@
         padding: 20px;
     }
     .slide{
+    }
+
+    &--scrolled{
+        .slider-slide_list{
+            padding-bottom: 10px;
+            .ps-scrollbar-x-rail{
+                margin: 0 20px;
+                bottom: 10px;
+                opacity: 0.6;
+                .ps-scrollbar-x{
+                    background-color: #3a3f5c;
+                }
+            }
+        }
     }
 
     @media screen and (max-width: 1000px){

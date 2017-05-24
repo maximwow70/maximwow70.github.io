@@ -1,7 +1,7 @@
 function initItemList(_slider) {
 
     var slider = _slider;
-    var slideListVM = document.querySelector('.slider-slide_list');
+    var slideListVM = slider.querySelector('.slider-slide_list');
     var _switch = slider.querySelector('.switch');
 
     var itemListVM = slider.querySelectorAll('.slider-slide');
@@ -29,12 +29,13 @@ function initItemList(_slider) {
                 slideListVM.appendChild(itemListVM[item]);
             }
         }
-        _slider = new Slider(document.querySelector('.slider'));
+        new Slider(_slider);
     })
 }
 
 window.addEventListener('load', function () {
-    initItemList(
-        document.querySelector('.slider')
-    );
+    var itemLists = document.querySelectorAll('.slider');
+    for (var itemList = 0; itemList < itemLists.length; itemList++){
+        initItemList(itemLists[itemList]);
+    }
 })
