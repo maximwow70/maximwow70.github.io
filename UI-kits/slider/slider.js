@@ -65,9 +65,14 @@ function Slider(slider) {
     var mouseDownX;
     var mouseMoveX;
 
-    sliderList.onmousedown = function () { };
-    sliderList.onmousemove = function () { };
-    sliderList.onmouseup = function () {};
+    sliderList.ontouchstart = function () { };
+    sliderList.ontouchmove = function () { };
+    sliderList.ontouchend = function () {};
+
+    sliderList.ontouchstart = function() {
+        alert("kek");
+    }
+    console.log(sliderList.ontouchstart);
 
     function onMouseMove(event) {
         mouseMoveX = event.screenX;
@@ -77,22 +82,22 @@ function Slider(slider) {
             -Math.round(parseFloat(sliderList.style.left)) < slideWidth * slides.length - 100
         ) {
             onBtnLeftClick();
-            sliderList.onmousemove = function () { };
+            sliderList.ontouchmove = function () { };
         }
         if (
             mouseDownX - mouseMoveX > 30 &&
             -Math.round(parseFloat(sliderList.style.left)) > 0
         ) {
             onBtnRightClick();
-            sliderList.onmousemove = function () { };
+            sliderList.ontouchmove = function () { };
         }
     }
-    sliderList.onmousedown = function (event) {
+    sliderList.ontouchstart = function (event) {
         mouseDownX = event.screenX;
-        sliderList.onmousemove = onMouseMove;
+        sliderList.ontouchmove = onMouseMove;
     };
-    sliderList.onmouseup = function () {
-        sliderList.onmousemove = function () { };
+    sliderList.ontouchend = function () {
+        sliderList.ontouchmove = function () { };
     };
 
     window.addEventListener('resize', function () {
