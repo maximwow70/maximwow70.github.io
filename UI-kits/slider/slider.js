@@ -74,7 +74,7 @@ function Slider(slider) {
         console.log(slideWidth * (slides.length - 1));
         if (
             mouseMoveX - mouseDownX > 30 &&
-            -Math.round(parseFloat(sliderList.style.left)) < slideWidth * (slides.length - 1)
+            -Math.round(parseFloat(sliderList.style.left)) < slideWidth * slides.length - 100
         ) {
             onBtnLeftClick();
             sliderList.onmousemove = function () { };
