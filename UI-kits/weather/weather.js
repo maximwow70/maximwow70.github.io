@@ -63,7 +63,7 @@ function Weather(weatherVM) {
         var xhrURL2 = "http://api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lng + "&appid=6712e6cc05d91d982fbb76726cb550eb";
 
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', xhrURL);
+        xhr.open('GET', xhrURL1);
         xhr.send();
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
