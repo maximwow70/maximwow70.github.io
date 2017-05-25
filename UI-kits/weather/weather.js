@@ -60,7 +60,7 @@ function Weather(weatherVM) {
 
         console.log(position);
 
-        var xhrURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lng + "&appid=6712e6cc05d91d982fbb76726cb550eb";
+        var xhrURL = "//api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lng + "&appid=6712e6cc05d91d982fbb76726cb550eb";
         var xhrURL1 = "https://api.darksky.net/forecast/df68e0210d9b418b7b3b8f3976cc4ae2/37.8267,-122.4233";
 
         var xhr = new XMLHttpRequest();
