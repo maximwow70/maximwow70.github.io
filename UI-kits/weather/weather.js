@@ -58,10 +58,9 @@ function Weather(weatherVM) {
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
 
-        console.log(position);
-
-        var xhrURL = "//api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lng + "&appid=6712e6cc05d91d982fbb76726cb550eb";
+        var xhrURL = "api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lng + "&appid=6712e6cc05d91d982fbb76726cb550eb";
         var xhrURL1 = "https://api.darksky.net/forecast/df68e0210d9b418b7b3b8f3976cc4ae2/37.8267,-122.4233";
+        var xhrURL2 = "http://api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lng + "&appid=6712e6cc05d91d982fbb76726cb550eb";
 
         var xhr = new XMLHttpRequest();
         xhr.open('GET', xhrURL);
