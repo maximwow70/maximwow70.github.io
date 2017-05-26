@@ -139,18 +139,18 @@ function initWeather() {
 
 
     
-    var xhr = new XMLHttpRequest();
-        xhr.open('GET', "http://www.apixu.com/doc/conditions.json");
-        xhr.send();
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var response = JSON.parse(xhr.responseText);
-                var allTypes = [];
-                for (var i = 0; i < response.length; i++){
-                    allTypes.push(response[i].day);
-                    allTypes.push(response[i].night);
-                }
+    /*var xhr = new XMLHttpRequest();
+    xhr.open('GET', "http://www.apixu.com/doc/conditions.json");
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+            var allTypes = [];
+            for (var i = 0; i < response.length; i++){
+                allTypes.push(response[i].day);
+                allTypes.push(response[i].night);
             }
         }
+    }*/
 }
 initWeather();
