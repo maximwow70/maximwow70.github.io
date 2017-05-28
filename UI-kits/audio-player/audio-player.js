@@ -254,8 +254,8 @@ function Audio(name, performer, url, coverUrl) {
                 './audio-player/src/3/lost.jpg'
             ),
             new Audio(
-                'Just for life',
-                'Lana Del Rey',
+                'Coming Home',
+                'Falling In Reverse',
                 './audio-player/src/7/Falling In Reverse - Coming Home.mp3',
                 './audio-player/src/7/falling-in-reverse.jpg'
             ),
