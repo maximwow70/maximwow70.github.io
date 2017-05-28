@@ -127,7 +127,7 @@ function initWeather() {
 
     var weathers = document.querySelectorAll(".weather");
 
-    if (weather) {
+    if (weathers) {
 
         var weatherLocation = new Weather(
             weathers[0]

@@ -128,13 +128,14 @@ function AudioPlayer(audioPlayerVM, audios) {
         progressControlVM.style.left = currentProgress + "%";
     }
 
-    function changeCurrentTime() {
-        var leftX = event.screenX - progressBarContainerVM.getBoundingClientRect().left;
+    function changeCurrentTime(event) {
+        var leftX = event.clientX - progressBarContainerVM.getBoundingClientRect().left;
         var part = leftX / parseFloat(window.getComputedStyle(progressBarContainerVM).width);
 
         audio.currentTime = audio.duration * part;
 
         play();
+        isPlayingVM.checked = true;
     }
     function mouseDown() {
 
@@ -145,11 +146,11 @@ function AudioPlayer(audioPlayerVM, audios) {
         audio.volume = 0;
         progressBarContainerVM.addEventListener('mousemove', changeCurrentTime);
     });
-    progressBarContainerVM.addEventListener('mouseup', function() {
+    progressBarContainerVM.addEventListener('mouseup', function () {
         audio.volume = 1;
         progressBarContainerVM.removeEventListener('mousemove', changeCurrentTime);
     });
-    progressBarContainerVM.addEventListener('mouseleave', function() {
+    progressBarContainerVM.addEventListener('mouseleave', function () {
         audio.volume = 1;
         progressBarContainerVM.removeEventListener('mousemove', changeCurrentTime);
     });
