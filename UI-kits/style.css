@@ -972,7 +972,10 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+  .audio_controls-is_playing {
+    display: none; }
   .audio_controls-btn {
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     background-color: inherit;
@@ -1006,8 +1009,40 @@
         opacity: 0; }
     .audio_controls-btn--active {
       color: #fe5339; }
-  .audio_controls-is_playing {
-    display: none; }
+  .audio_controls-volume_bar {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    width: 15px;
+    height: 75px; }
+    .audio_controls-volume_bar--active {
+      display: block; }
+  .audio_controls-bar {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    width: 3px;
+    height: 100%;
+    background-color: #3a3f5c; }
+  .audio_controls-control {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    width: 15px;
+    height: 15px;
+    background-color: #3a3f5c;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(58, 63, 92, 0.4); }
   .audio_controls-is_playing:checked + .audio_controls-btn .fa-play {
     opacity: 0; }
   .audio_controls-is_playing:checked + .audio_controls-btn .fa-pause {

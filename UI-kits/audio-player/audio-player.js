@@ -14,8 +14,16 @@ function AudioPlayer(audioPlayerVM, audios) {
     var progressBarVM = audioPlayerVM.querySelector('.audio_progress-progress_bar');
     var progressControlVM = audioPlayerVM.querySelector('.audio_progress-control');
 
+    var currentVolume = audio.volume;
+    var volumeBarVM = audioPlayerVM.querySelector('.audio_controls-volume_bar');
+    var volumeControlVM = volumeBarVM.querySelector('.audio_controls-control');
 
     var numberAudio = 0;
+
+
+    var isRandom = false;
+    var btnRandom = audioPlayerVM.querySelector('.audio_controls-btn--random');
+    btnRandom.addEventListener('click', toggleRandom);
 
     var btnPlay = audioPlayerVM.querySelector('.audio_controls-btn--play');
     btnPlay.addEventListener('click', togglePlay);
@@ -26,9 +34,14 @@ function AudioPlayer(audioPlayerVM, audios) {
     var btnBackward = audioPlayerVM.querySelector('.audio_controls-btn--backward');
     btnBackward.addEventListener('click', backward);
 
-    var isRandom = false;
-    var btnRandom = audioPlayerVM.querySelector('.audio_controls-btn--random');
-    btnRandom.addEventListener('click', toggleRandom);
+    var btnVolume = audioPlayerVM.querySelector('.audio_controls-btn--volume');
+    btnVolume.addEventListener('click', function() {
+        if (volumeBarVM.classList.contains('audio_controls-volume_bar--active')){
+            volumeBarVM.classList.remove('audio_controls-volume_bar--active');
+        } else {
+            volumeBarVM.classList.add('audio_controls-volume_bar--active');
+        }
+    })
 
 
     function play() {
@@ -146,6 +159,8 @@ function AudioPlayer(audioPlayerVM, audios) {
 
         progressBarVM.style.width = currentProgress + "%";
         progressControlVM.style.left = currentProgress + "%";
+
+        console.log(audio.volume);
     }
 
     function getRandomAudioNumber(){
@@ -168,6 +183,22 @@ function AudioPlayer(audioPlayerVM, audios) {
         play();
         isPlayingVM.checked = true;
     }
+    function changeCurrentVolume(event) {
+        event.stopPropagation();
+
+        var topY = event.clientY - volumeBarVM.getBoundingClientRect().top;
+        var part = topY / parseFloat(window.getComputedStyle(volumeBarVM).height);
+        if (part > 1){
+            part = 1;
+        } else if (part < 0){
+            part = 0;
+        }
+        part = 1 - part;
+
+        currentVolume = part;
+        audio.volume = currentVolume;
+        volumeControlVM.style.top = (1 - currentVolume) * 100 + "%";
+    }
     function playRandomAudio() {
         numberAudio = getRandomAudioNumber();
         audio.src = audios[numberAudio].url;
@@ -181,13 +212,26 @@ function AudioPlayer(audioPlayerVM, audios) {
         progressBarContainerVM.addEventListener('mousemove', changeCurrentTime);
     });
     progressBarContainerVM.addEventListener('mouseup', function () {
-        audio.volume = 1;
+        audio.volume = currentVolume;
         progressBarContainerVM.removeEventListener('mousemove', changeCurrentTime);
     });
     progressBarContainerVM.addEventListener('mouseleave', function () {
-        audio.volume = 1;
+        audio.volume = currentVolume;
         progressBarContainerVM.removeEventListener('mousemove', changeCurrentTime);
     });
+
+
+    volumeBarVM.addEventListener('click', changeCurrentVolume);
+    volumeBarVM.addEventListener('mousedown', function() {
+        volumeBarVM.addEventListener('mousemove', changeCurrentVolume);
+    });
+    volumeBarVM.addEventListener('mouseup', function () {
+        volumeBarVM.removeEventListener('mousemove', changeCurrentVolume);
+    });
+    volumeBarVM.addEventListener('mouseleave', function () {
+        volumeBarVM.removeEventListener('mousemove', changeCurrentVolume);
+    });
+
 
 
     audio.src = audios[0].url;

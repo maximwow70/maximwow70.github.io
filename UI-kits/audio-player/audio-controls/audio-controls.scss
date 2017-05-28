@@ -7,7 +7,11 @@
     justify-content: space-between;
     align-items: center;
 
+    &-is_playing{
+        display: none;
+    }
     &-btn{
+        position: relative;
 
         display: inline-block;
         vertical-align: middle;
@@ -55,9 +59,47 @@
             color: #fe5339;
         }
     }
-    &-is_playing{
+
+    &-volume_bar{
         display: none;
+
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translate(-50%, -100%);
+
+        width: 15px;
+        height: 75px;
+
+        &--active{
+            display: block;
+        }
     }
+    &-bar{
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+
+        width: 3px;
+        height: 100%;
+
+        background-color: #3a3f5c;
+    }
+    &-control{
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 0%);
+
+        width: 15px;
+        height: 15px;
+        background-color: #3a3f5c;
+        border-radius: 50%;
+
+        box-shadow: 0 0 20px rgba(#3a3f5c, 0.4);
+    }
+
     &-is_playing:checked + .audio_controls-btn{
         .fa-play{
             opacity: 0;
