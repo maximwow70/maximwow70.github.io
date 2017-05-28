@@ -26,6 +26,10 @@ function AudioPlayer(audioPlayerVM, audios) {
     var btnBackward = audioPlayerVM.querySelector('.audio_controls-btn--backward');
     btnBackward.addEventListener('click', backward);
 
+    var isRandom = false;
+    var btnRandom = audioPlayerVM.querySelector('.audio_controls-btn--random');
+    btnRandom.addEventListener('click', toggleRandom);
+
 
     function play() {
         audio.play();
@@ -45,7 +49,7 @@ function AudioPlayer(audioPlayerVM, audios) {
         }
     }
     function forward() {
-        setTimeout(function () {
+        if (!isRandom){
             if (audios[numberAudio + 1]) {
                 numberAudio += 1;
                 audio.src = audios[numberAudio].url;
@@ -53,14 +57,15 @@ function AudioPlayer(audioPlayerVM, audios) {
                 audio.src = audios[audios.length - 1].url;
                 numberAudio = audios.length - 1;
             }
-            audio.play();
-
-            isPlayingVM.checked = true;
+            play();
             renderVM();
-        }, 100);
+            isPlayingVM.checked = true;
+        } else {
+            playRandomAudio();
+        }
     }
     function backward() {
-        setTimeout(function () {
+        if (!isRandom){
             if (audios[numberAudio - 1]) {
                 numberAudio -= 1;
                 audio.src = audios[numberAudio].url;
@@ -68,14 +73,24 @@ function AudioPlayer(audioPlayerVM, audios) {
                 audio.src = audios[0].url;
                 numberAudio = 0;
             }
-            audio.play();
-
-            isPlayingVM.checked = true;
+            play();
             renderVM();
-        }, 100);
+            isPlayingVM.checked = true;
+        } else {
+            playRandomAudio();
+        }
+    }
+    function toggleRandom() {
+        isRandom = isRandom ? false : true;
+        if (isRandom) {
+            btnRandom.classList.add('audio_controls-btn--active');
+        } else {
+            btnRandom.classList.remove('audio_controls-btn--active');
+        }
     }
 
     function isPlaying() {
+        console.log(audio.paused);
         return !audio.paused;
     }
 
@@ -84,26 +99,31 @@ function AudioPlayer(audioPlayerVM, audios) {
         audioNameVM.innerText = audios[numberAudio].name;
         audioPerformerVM.innerText = audios[numberAudio].performer;
     }
-
     function renderTime() {
         if (audio.currentTime >= audio.duration) {
-            if (audios[numberAudio + 1]) {
-                forward();
+            if (!isRandom) {
+                if (audios[numberAudio + 1]) {
+                    forward();
+                } else {
+                    isPlayingVM.checked = false;
+                }
             } else {
-                isPlayingVM.checked = false;
+                playRandomAudio();
             }
         }
 
 
-        var duration = Math.floor(audio.duration / 60) + ":" + Math.floor(audio.duration % 60);
+        var durationMinutes = Math.floor(audio.duration / 60);
+        durationMinutes = isNaN(durationMinutes) ? "0" : durationMinutes;
+        var durationSeconds = Math.floor(audio.duration % 60);
+        durationSeconds = isNaN(durationSeconds) ? "00" : durationSeconds;
+        var duration = durationMinutes + ":" + durationSeconds;
 
         var currentTime = "";
-
         var currentMinutes = Math.floor(audio.currentTime / 60);
-        currentMinutes = !isNaN(currentMinutes) ? currentMinutes : 0;
-
+        currentMinutes = !isNaN(currentMinutes) ? currentMinutes : "0";
         var currentSeconds = Math.round(audio.currentTime % 60);
-        currentSeconds = !isNaN(currentSeconds) ? currentSeconds : 0;
+        currentSeconds = !isNaN(currentSeconds) ? currentSeconds : "00";
 
         if (audio.currentTime < audio.duration) {
             currentTime += currentMinutes + ":";
@@ -128,6 +148,17 @@ function AudioPlayer(audioPlayerVM, audios) {
         progressControlVM.style.left = currentProgress + "%";
     }
 
+    function getRandomAudioNumber(){
+        var previousNumberAudio = numberAudio;
+        var newNumberAudio = Math.min(
+            Math.floor(
+                Math.random() * audios.length
+            ),
+            audios.length - 1
+        );
+        return  (newNumberAudio != previousNumberAudio) ? newNumberAudio : 0;
+    }
+
     function changeCurrentTime(event) {
         var leftX = event.clientX - progressBarContainerVM.getBoundingClientRect().left;
         var part = leftX / parseFloat(window.getComputedStyle(progressBarContainerVM).width);
@@ -137,8 +168,11 @@ function AudioPlayer(audioPlayerVM, audios) {
         play();
         isPlayingVM.checked = true;
     }
-    function mouseDown() {
-
+    function playRandomAudio() {
+        numberAudio = getRandomAudioNumber();
+        audio.src = audios[numberAudio].url;
+        renderVM();
+        play();
     }
 
     progressBarContainerVM.addEventListener('click', changeCurrentTime);
@@ -159,6 +193,14 @@ function AudioPlayer(audioPlayerVM, audios) {
     audio.src = audios[0].url;
     renderVM();
 }
+
+function Audio(name, performer, url, coverUrl) {
+    this.name = name;
+    this.performer = performer;
+    this.url = url;
+    this.coverUrl = coverUrl;
+}
+
 (function initAudioPlayer() {
 
     new AudioPlayer(
@@ -191,10 +233,3 @@ function AudioPlayer(audioPlayerVM, audios) {
         ]
     );
 })();
-
-function Audio(name, performer, url, coverUrl) {
-    this.name = name;
-    this.performer = performer;
-    this.url = url;
-    this.coverUrl = coverUrl;
-}

@@ -2,8 +2,13 @@
     padding: 20px;
     border-top: 1px solid #ebebed;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
     &-btn{
+
         display: inline-block;
         vertical-align: middle;
 
@@ -19,8 +24,6 @@
 
         &--play{
             position: relative;
-
-            margin: 0 20px;
 
             width: 45px;
             height: 45px;
@@ -46,6 +49,10 @@
 
                 opacity: 0;
             }
+        }
+
+        &--active{
+            color: #fe5339;
         }
     }
     &-is_playing{

@@ -959,7 +959,19 @@
 
 .audio_controls {
   padding: 20px;
-  border-top: 1px solid #ebebed; }
+  border-top: 1px solid #ebebed;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
   .audio_controls-btn {
     display: inline-block;
     vertical-align: middle;
@@ -971,7 +983,6 @@
     cursor: pointer; }
     .audio_controls-btn--play {
       position: relative;
-      margin: 0 20px;
       width: 45px;
       height: 45px;
       background-color: #fe5339;
@@ -993,6 +1004,8 @@
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         opacity: 0; }
+    .audio_controls-btn--active {
+      color: #fe5339; }
   .audio_controls-is_playing {
     display: none; }
   .audio_controls-is_playing:checked + .audio_controls-btn .fa-play {
