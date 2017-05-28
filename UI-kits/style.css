@@ -1003,7 +1003,7 @@
 .audio_progress {
   color: #3a3f5c; }
   .audio_progress-time {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -1024,12 +1024,26 @@
   .audio_progress-bar {
     position: relative;
     width: 100%;
+    height: 15px; }
+  .audio_progress-full_bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    width: 100%;
     height: 3px;
     background-color: #f1f1f9; }
   .audio_progress-progress_bar {
     position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
     width: 0%;
-    height: 100%;
+    height: 3px;
     background-color: #fe5339; }
   .audio_progress-control {
     position: absolute;

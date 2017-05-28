@@ -1,7 +1,5 @@
 function AudioPlayer(audioPlayerVM, audios) {
 
-    console.log(audioPlayerVM);
-
     var audio = audioPlayerVM.querySelector('.audio-value');
 
     var audioCoverVM = audioPlayerVM.querySelector('.audio-cover');
@@ -12,6 +10,7 @@ function AudioPlayer(audioPlayerVM, audios) {
 
     var progressTimeVM = audioPlayerVM.querySelector('.audio_progress-progress_time');
     var fullTimeVM = audioPlayerVM.querySelector('.audio_progress-full_time');
+    var progressBarContainerVM = audioPlayerVM.querySelector('.audio_progress-bar');
     var progressBarVM = audioPlayerVM.querySelector('.audio_progress-progress_bar');
     var progressControlVM = audioPlayerVM.querySelector('.audio_progress-control');
 
@@ -28,15 +27,21 @@ function AudioPlayer(audioPlayerVM, audios) {
     btnBackward.addEventListener('click', backward);
 
 
+    function play() {
+        audio.play();
+        renderTime();
+        renderTimeInterval = window.setInterval(renderTime, 1000);
+    }
+    function pause() {
+        audio.pause();
+        renderTime();
+        window.clearInterval(renderTimeInterval);
+    }
     function togglePlay() {
         if (isPlaying()) {
-            audio.pause();
-            renderTime();
-            window.clearInterval(renderTimeInterval);
+            pause();
         } else {
-            audio.play();
-            renderTime();
-            renderTimeInterval = window.setInterval(renderTime, 1000);
+            play();
         }
     }
     function forward() {
@@ -122,6 +127,33 @@ function AudioPlayer(audioPlayerVM, audios) {
         progressBarVM.style.width = currentProgress + "%";
         progressControlVM.style.left = currentProgress + "%";
     }
+
+    function changeCurrentTime() {
+        var leftX = event.screenX - progressBarContainerVM.getBoundingClientRect().left;
+        var part = leftX / parseFloat(window.getComputedStyle(progressBarContainerVM).width);
+
+        audio.currentTime = audio.duration * part;
+
+        play();
+    }
+    function mouseDown() {
+
+    }
+
+    progressBarContainerVM.addEventListener('click', changeCurrentTime);
+    progressBarContainerVM.addEventListener('mousedown', function () {
+        audio.volume = 0;
+        progressBarContainerVM.addEventListener('mousemove', changeCurrentTime);
+    });
+    progressBarContainerVM.addEventListener('mouseup', function() {
+        audio.volume = 1;
+        progressBarContainerVM.removeEventListener('mousemove', changeCurrentTime);
+    });
+    progressBarContainerVM.addEventListener('mouseleave', function() {
+        audio.volume = 1;
+        progressBarContainerVM.removeEventListener('mousemove', changeCurrentTime);
+    });
+
 
     audio.src = audios[0].url;
     renderVM();
