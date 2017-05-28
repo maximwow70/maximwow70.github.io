@@ -8,11 +8,17 @@
 @import './radiobox/radiobox.scss';
 @import './select-file/select-file.scss';
 
+@import './search/search.scss';
+
 @import './slider/slider.scss';
 @import './item-card/item-card.scss';
 
 @import './diagram/diagram.scss';
 @import './weather/weather.scss';
+
+@import './navigation/navigation.scss';
+
+@import './audio-player/audio-player.scss';
 
 *{
     margin: 0;

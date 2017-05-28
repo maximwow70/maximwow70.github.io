@@ -1,0 +1,16 @@
+@import './audio/audio.scss';
+@import './audio-controls/audio-controls.scss';
+@import './audio-progress/audio-progress.scss';
+.audio_player{
+    display: inline-block;
+
+    width: 280px;
+    background-color: #FFF;
+    border-radius: 5px;
+
+    box-shadow: 0 0 50px rgba(#3a3f5c, 0.4);
+    
+    &-audio_progress{
+        padding: 0 20px 20px 20px;
+    }
+}

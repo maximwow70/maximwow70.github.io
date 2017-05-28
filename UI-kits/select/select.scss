@@ -5,6 +5,8 @@
 
     height: 42px;
     box-sizing: border-box;
+    background-color: #3a3f5c;
+    border-radius: 5px;
 
     color: #FFF;
     text-align: left;
@@ -14,10 +16,12 @@
         vertical-align: middle;
 
         box-sizing: border-box;
-        background-color: #3a3f5c;
-        color: #FFF;
+        background-color: inherit;
 
         line-height: 42px;
+        color: #FFF;
+
+        cursor: pointer;
     }
     &-input{
         width: 200px;
@@ -42,8 +46,6 @@
         outline: none;
 
         text-align: center;
-
-        cursor: pointer;
     }
     &-btn_icon{
         position: relative;
@@ -103,6 +105,39 @@
         transition: 0.3s;
         &:hover, &--active{
             background-color: #F1F2F7;
+        }
+    }
+
+    &--full_squared{
+        .select{
+            border-radius: 0px;
+            &-input{
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 0px;
+            }
+            &-btn{
+                border-bottom-right-radius: 0px;
+                border-top-right-radius: 0px;
+            }
+        }
+    }
+    &--bg_none{
+        background-color: none;
+    }
+    &--light{
+        .select{
+            &-input{
+                border: 1px solid #e7e8ed;
+                border-right: none;
+                background-color: #FFF;
+                color: #3a3f5c;
+            }
+            &-btn{
+                border: 1px solid #e7e8ed;
+                border-left: none;
+                background-color: #FFF;
+                color: #3a3f5c;
+            }
         }
     }
 

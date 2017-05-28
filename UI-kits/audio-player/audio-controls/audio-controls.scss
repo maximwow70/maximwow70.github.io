@@ -1,0 +1,62 @@
+.audio_controls{
+    padding: 20px;
+    border-top: 1px solid #ebebed;
+
+
+    &-btn{
+        display: inline-block;
+        vertical-align: middle;
+
+        background-color: inherit;
+        outline: none;
+
+        color: #3a3f5c;
+        font-size: 16px;
+
+        transition: 0.3s;
+        cursor: pointer;
+
+
+        &--play{
+            position: relative;
+
+            margin: 0 20px;
+
+            width: 45px;
+            height: 45px;
+
+            background-color: #fe5339;
+            border-radius: 50%;
+
+            color: #FFF;
+
+            .fa-play{
+                position: absolute;
+                top: 50%;
+                left: 54%;
+                transform: translate(-50%, -50%);
+
+                opacity: 1;
+            }
+            .fa-pause{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                opacity: 0;
+            }
+        }
+    }
+    &-is_playing{
+        display: none;
+    }
+    &-is_playing:checked + .audio_controls-btn{
+        .fa-play{
+            opacity: 0;
+        }
+        .fa-pause{
+            opacity: 1;
+        }
+    }
+}

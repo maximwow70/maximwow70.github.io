@@ -1,0 +1,11 @@
+@font-face{
+    font-family: logo;
+    src: url('./navigation/logo/logo.otf');
+}
+.logo{
+    &-name{
+        font-family: logo;
+        font-size: 32px;
+        font-weight: normal;
+    }
+}

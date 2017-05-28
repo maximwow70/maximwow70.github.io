@@ -26,6 +26,7 @@ function Select(select) {
         });
     }
     btn.addEventListener('click', this.ontoggle);
+    input.addEventListener('click', this.ontoggle);
 
     input.setAttribute('value', values[0].getAttribute('value'));
 }

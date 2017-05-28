@@ -405,7 +405,7 @@
                         <div class="diagram-value">50%</div>
                     </div>
                 </div>-->
-                <div class="UI-kit">
+                <!--<div class="UI-kit">
                     <div class="weather">
                         <h4 class="weather-date">
                             <div class="date">-- --, --</div>
@@ -442,6 +442,97 @@
                             --
                         </h4>
                     </div>
+                </div>-->
+                <div class="UI-kit UI-kit--big UI-kit--padding">
+                    <div class="navigation navigation--light">
+                        <div class="navigation-logo">
+                            <div class="logo">
+                                <h2 class="logo-name">
+                                    Portland
+                                </h2>
+                            </div>
+                        </div><!--
+                        --><div class="navigation-search">
+                            <div class="search">
+                                <input class="search-input" type="text" placeholder="I'm shopping for.."><!--
+                                --><div class="search-select">
+                                    <div class="select select--full_squared select--light">
+                                        <input type="text" class="select-input" value="" readonly><!--
+                                        --><button class="select-btn">
+                                            <div class="select-btn_icon"><span class="fa fa-chevron-down"></span></div>
+                                        </button>
+                                        <div class="select-value_list">
+                                            <button class="select-value" value="Ladies"></button>
+                                            <button class="select-value" value="Men"></button>
+                                            <button class="select-value" value="Kids"></button>
+                                        </div>
+                                    </div>
+                                </div><!--
+                                --><button class="search-btn">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </div>
+                        </div><!--
+                        --><div class="navigation-actions">
+                            <div class="navigation-btn">
+                                <div class="btn btn--no_bordered">
+                                    <div class="fa fa-shopping-cart"></div>
+                                    cart
+                                </div>
+                            </div>
+                            <div class="navigation-btn">
+                                <div class="btn btn--no_bordered">
+                                    <div class="fa fa-heart"></div>
+                                    wishlist
+                                </div>
+                            </div>
+                            <div class="navigation-btn">
+                                <div class="btn">sign in</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="UI-kit">
+                    <div class="audio_player">
+                        <div class="audio_player-audio">
+                            <div class="audio">
+                                <audio class="audio-value" src="./audio-player/src/2/Aether-Stargazer.mp3"  controls></audio>
+                                <img class="audio-cover" src="" alt="">
+                                <div class="audio-info">
+                                    <div class="audio-name"></div>
+                                    <div class="audio-performer"></div>
+                                    <div class="audio-btn"><span class="fa fa-heart"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="audio_player-audio_progress">
+                            <div class="audio_progress">
+                                <div class="audio_progress-time">
+                                    <div class="audio_progress-progress_time">-:--</div>
+                                    <div class="audio_progress-full_time">-:--</div>
+                                </div>
+                                <div class="audio_progress-bar">
+                                    <div class="audio_progress-progress_bar"></div>
+                                    <div class="audio_progress-control"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="audio_player-audio_controls">
+                            <div class="audio_controls">
+                                <button class="audio_controls-btn audio_controls-btn--backward">
+                                    <span class="fa fa-backward"></span>
+                                </button>
+                                <input id="audio-is_playing_1" type="checkbox" class="audio_controls-is_playing">
+                                <label class="audio_controls-btn audio_controls-btn--play" for="audio-is_playing_1" >
+                                    <span class="fa fa-play"></span>
+                                    <span class="fa fa-pause"></span>
+                                </label>
+                                <button class="audio_controls-btn audio_controls-btn--forward">
+                                    <span class="fa fa-forward"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -455,6 +546,10 @@
     <script src="./slider/slider.js"></script>
     <script src="./item-card/item-card.js"></script>
     <script src="./weather/weather.js"></script>
+    <script src="./search/search.js"></script>
+
+    <script src="./audio-player/audio-player.js"></script>
+
     <script src="./main.js"></script>
 </body>
 </html>

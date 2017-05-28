@@ -28,7 +28,7 @@ function getMonthName(monthNumber) {
 }
 function getWeatherIcon(type) {
     var types = type.split(' ');
-    for (var i = 0; i < types.length; i++){
+    for (var i = 0; i < types.length; i++) {
         switch (types[i].toLowerCase()) {
             case "cloudy": return "cloud.svg";
             case "rain": return "rain.svg";
@@ -127,18 +127,21 @@ function initWeather() {
 
     var weathers = document.querySelectorAll(".weather");
 
-    var weatherLocation = new Weather(
-        weathers[0]
-    );
-    weatherLocation.getWeatherByLocation();
+    if (weather) {
 
-    var weather = new Weather(
-        weathers[1]
-    );
-    weather.getWeather(40.714159, -74.010996);
+        var weatherLocation = new Weather(
+            weathers[0]
+        );
+        weatherLocation.getWeatherByLocation();
+
+        var weather = new Weather(
+            weathers[1]
+        );
+        weather.getWeather(40.714159, -74.010996);
+    }
 
 
-    
+
     /*var xhr = new XMLHttpRequest();
     xhr.open('GET', "http://www.apixu.com/doc/conditions.json");
     xhr.send();

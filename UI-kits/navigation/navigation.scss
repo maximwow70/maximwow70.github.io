@@ -1,0 +1,83 @@
+@import './logo/logo.scss';
+@import './btn/btn.scss';
+.navigation{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    min-height: 90px;
+    padding: 0 35px;
+    border-radius: 5px;
+
+    text-align: left;
+
+    &-logo, &-search, &-actions{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    &-logo{
+    }
+    &-search{
+    }
+    &-actions{
+
+        text-align: right;
+    }
+    &-btn{
+        margin-left: 10px;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        &:first-child{
+            margin-left: 0px;
+        }
+    }
+
+    &--light{
+        background-color: #FFF;
+
+        color: #3a3f5c;
+    }
+
+    @media screen and (max-width: 1300px){
+        &-search{
+            .search{
+                &-input{
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1100px){
+        padding: 20px 35px;
+        &-actions{
+            margin-top: 20px;
+
+            width: 100%;
+            text-align: center;
+        }
+    }
+    @media screen and (max-width: 800px){
+        flex-direction: column;
+        justify-content: center;
+        &-logo{
+            margin-bottom: 20px;
+        }
+    }
+    @media screen and (max-width: 450px){
+        &-actions{
+            text-align: center;
+        }
+        &-btn{
+            margin-left: 0px;
+            width: 100%;
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
