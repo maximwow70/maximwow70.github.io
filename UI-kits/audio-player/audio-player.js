@@ -125,7 +125,6 @@ function AudioPlayer(audioPlayerVM, audios) {
             }
         }
 
-
         var durationMinutes = Math.floor(audio.duration / 60);
         durationMinutes = isNaN(durationMinutes) ? "0" : durationMinutes;
         var durationSeconds = Math.floor(audio.duration % 60);
@@ -159,8 +158,6 @@ function AudioPlayer(audioPlayerVM, audios) {
 
         progressBarVM.style.width = currentProgress + "%";
         progressControlVM.style.left = currentProgress + "%";
-
-        console.log(audio.volume);
     }
 
     function getRandomAudioNumber(){
@@ -259,8 +256,26 @@ function Audio(name, performer, url, coverUrl) {
             new Audio(
                 'Just for life',
                 'Lana Del Rey',
+                './audio-player/src/7/Falling In Reverse - Coming Home.mp3',
+                './audio-player/src/7/falling-in-reverse.jpg'
+            ),
+            new Audio(
+                'Just for life',
+                'Lana Del Rey',
                 './audio-player/src/4/Lana Del Rey - Lust For Life.mp3',
                 './audio-player/src/4/just-for-life.jpg'
+            ),
+            new Audio(
+                'All The Right Moves',
+                'One Republic',
+                './audio-player/src/6/One Republic - All The Right Moves.mp3',
+                './audio-player/src/6/all-the-right-moves.jpg'
+            ),
+            new Audio(
+                'Blue',
+                'Emarosa',
+                './audio-player/src/5/Emarosa - Blue.mp3',
+                './audio-player/src/5/emarosa.jpg'
             ),
             new Audio(
                 'Stargazer',
