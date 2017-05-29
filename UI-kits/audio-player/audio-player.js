@@ -13,6 +13,7 @@ function AudioPlayer(audioPlayerVM, audios) {
     var progressBarContainerVM = audioPlayerVM.querySelector('.audio_progress-bar');
     var progressBarVM = audioPlayerVM.querySelector('.audio_progress-progress_bar');
     var progressControlVM = audioPlayerVM.querySelector('.audio_progress-control');
+    var progressBufferedVM = audioPlayerVM.querySelector('.audio_progress-progress_buffered');
 
     var currentVolume = audio.volume;
     var volumeBarVM = audioPlayerVM.querySelector('.audio_controls-volume_bar');
@@ -47,12 +48,10 @@ function AudioPlayer(audioPlayerVM, audios) {
     function play() {
         audio.play();
         renderTime();
-        renderTimeInterval = window.setInterval(renderTime, 1000);
     }
     function pause() {
         audio.pause();
         renderTime();
-        window.clearInterval(renderTimeInterval);
     }
     function togglePlay() {
         if (isPlaying()) {
@@ -202,6 +201,14 @@ function AudioPlayer(audioPlayerVM, audios) {
         renderVM();
         play();
     }
+
+    
+    audio.addEventListener('timeupdate', renderTime);
+
+    audio.addEventListener('progress', function() {
+        console.log(audio.buffered.end(0) / audio.duration);
+        progressBufferedVM.style.width = Math.min(audio.buffered.end(0) / audio.duration * 100, 100) + "%";
+    });
 
     progressBarContainerVM.addEventListener('click', changeCurrentTime);
     progressBarContainerVM.addEventListener('mousedown', function () {

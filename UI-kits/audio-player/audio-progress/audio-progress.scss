@@ -57,4 +57,14 @@
 
         box-shadow: 0 0 20px rgba(#3a3f5c, 0.4);
     }
+    &-progress_buffered{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0%, -50%);
+        
+        width: 0%;
+        height: 3px;
+        background-color: rgba(#3a3f5c, 0.4);
+    }
 }

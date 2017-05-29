@@ -1107,6 +1107,16 @@
     background-color: #3a3f5c;
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(58, 63, 92, 0.4); }
+  .audio_progress-progress_buffered {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    width: 0%;
+    height: 3px;
+    background-color: rgba(58, 63, 92, 0.4); }
 
 .audio_player {
   display: inline-block;
