@@ -1,0 +1,108 @@
+.colorpicker{
+    display: inline-block;
+
+    box-sizing: border-box;
+    width: 280px;
+    background-color: #FFF;
+    border-radius: 5px;
+
+    box-shadow: 0 0 50px rgba(#3a3f5c, 0.4);
+
+    color: #3a3f5c;
+
+    &-title{
+        padding: 20px;
+        border-bottom: 1px solid #f1f1f3;
+
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+    &-colors_list{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+
+        padding: 20px 20px 0 20px;
+    }
+    &-color{
+        position: relative;
+        margin-bottom: 20px;
+
+        display: inline-block;
+
+        box-sizing: border-box;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #3a3f5c;
+        outline: none;
+        
+        color: #FFF;
+
+        cursor: pointer;
+
+        &:not(:nth-child(5n)){
+            margin-right: 16.25px;
+        }
+
+        &--picked{
+            .colorpicker-is_picked{
+                opacity: 1;
+            }
+        }
+
+        &--black{
+            background-color: #333;
+        }
+        &--white{
+            background-color: #FFF;
+            border: 2px solid #3a3f5c;
+
+            color: #3a3f5c;
+        }
+        &--red{
+            background-color: #ff5234;
+        }
+        &--yellow{
+            background-color: #f5c500;
+        }
+        &--blue{
+            background-color: #2754eb;
+        }
+        &--green{
+            background-color: #01e2aa;
+        }
+        &--light_blue{
+            background-color: #00deeb;
+        }
+        &--military{
+            background-color: #007236;
+            background-image: url(./colorpicker/src/military-icon1.png);
+            background-size: 225% 225%;
+        }
+        &--multicolor{
+            background-color: transparent;
+            background-image: url(./colorpicker/src/colors_icon.png);
+            background-position: center;
+            background-size: 150% 150%;
+            
+        }
+
+    }
+    &-is_picked{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: 16px;
+
+        transition: 0.3s;
+        opacity: 0;
+
+    }
+
+}

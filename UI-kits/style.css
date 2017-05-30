@@ -945,6 +945,7 @@
     height: 40px;
     border: 2px solid #A1A6BB;
     border-radius: 50px;
+    font-size: 18px;
     cursor: pointer;
     transition: 0.3s; }
     .audio-btn .fa {
@@ -1020,7 +1021,8 @@
     -ms-transform: translate(-50%, -100%);
     transform: translate(-50%, -100%);
     width: 15px;
-    height: 75px; }
+    height: 75px;
+    cursor: default; }
     .audio_controls-volume_bar--active {
       display: block; }
   .audio_controls-bar {
@@ -1044,6 +1046,7 @@
     height: 15px;
     background-color: #3a3f5c;
     border-radius: 50%;
+    cursor: pointer;
     box-shadow: 0 0 20px rgba(58, 63, 92, 0.4); }
   .audio_controls-is_playing:checked + .audio_controls-btn .fa-play {
     opacity: 0; }
@@ -1106,7 +1109,8 @@
     height: 15px;
     background-color: #3a3f5c;
     border-radius: 50%;
-    box-shadow: 0 0 20px rgba(58, 63, 92, 0.4); }
+    box-shadow: 0 0 20px rgba(58, 63, 92, 0.4);
+    cursor: pointer; }
   .audio_progress-progress_buffered {
     position: absolute;
     top: 50%;
@@ -1126,6 +1130,89 @@
   box-shadow: 0 0 50px rgba(58, 63, 92, 0.4); }
   .audio_player-audio_progress {
     padding: 0 20px 20px 20px; }
+
+.colorpicker {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 280px;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0 0 50px rgba(58, 63, 92, 0.4);
+  color: #3a3f5c; }
+  .colorpicker-title {
+    padding: 20px;
+    border-bottom: 1px solid #f1f1f3;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: left; }
+  .colorpicker-colors_list {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 20px 20px 0 20px; }
+  .colorpicker-color {
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #3a3f5c;
+    outline: none;
+    color: #FFF;
+    cursor: pointer; }
+    .colorpicker-color:not(:nth-child(5n)) {
+      margin-right: 16.25px; }
+    .colorpicker-color--picked .colorpicker-is_picked {
+      opacity: 1; }
+    .colorpicker-color--black {
+      background-color: #333; }
+    .colorpicker-color--white {
+      background-color: #FFF;
+      border: 2px solid #3a3f5c;
+      color: #3a3f5c; }
+    .colorpicker-color--red {
+      background-color: #ff5234; }
+    .colorpicker-color--yellow {
+      background-color: #f5c500; }
+    .colorpicker-color--blue {
+      background-color: #2754eb; }
+    .colorpicker-color--green {
+      background-color: #01e2aa; }
+    .colorpicker-color--light_blue {
+      background-color: #00deeb; }
+    .colorpicker-color--military {
+      background-color: #007236;
+      background-image: url(./colorpicker/src/military-icon1.png);
+      background-size: 225% 225%; }
+    .colorpicker-color--multicolor {
+      background-color: transparent;
+      background-image: url(./colorpicker/src/colors_icon.png);
+      background-position: center;
+      background-size: 150% 150%; }
+  .colorpicker-is_picked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    transition: 0.3s;
+    opacity: 0; }
 
 * {
   margin: 0;

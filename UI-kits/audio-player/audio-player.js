@@ -44,6 +44,7 @@ function AudioPlayer(audioPlayerVM, audios) {
         }
     })
 
+    var currentBuffer = 0;
 
     function play() {
         audio.play();
@@ -71,7 +72,6 @@ function AudioPlayer(audioPlayerVM, audios) {
             }
             play();
             renderVM();
-            isPlayingVM.checked = true;
         } else {
             playRandomAudio();
         }
@@ -87,7 +87,6 @@ function AudioPlayer(audioPlayerVM, audios) {
             }
             play();
             renderVM();
-            isPlayingVM.checked = true;
         } else {
             playRandomAudio();
         }
@@ -102,7 +101,6 @@ function AudioPlayer(audioPlayerVM, audios) {
     }
 
     function isPlaying() {
-        console.log(audio.paused);
         return !audio.paused;
     }
 
@@ -117,7 +115,6 @@ function AudioPlayer(audioPlayerVM, audios) {
                 if (audios[numberAudio + 1]) {
                     forward();
                 } else {
-                    isPlayingVM.checked = false;
                 }
             } else {
                 playRandomAudio();
@@ -127,7 +124,7 @@ function AudioPlayer(audioPlayerVM, audios) {
         var durationMinutes = Math.floor(audio.duration / 60);
         durationMinutes = isNaN(durationMinutes) ? "0" : durationMinutes;
         var durationSeconds = Math.floor(audio.duration % 60);
-        durationSeconds = isNaN(durationSeconds) ? "00" : durationSeconds;
+        durationSeconds = isNaN(durationSeconds) ? "00" : (durationSeconds < 10) ? ("0" + durationSeconds) : durationSeconds;
         var duration = durationMinutes + ":" + durationSeconds;
 
         var currentTime = "";
@@ -157,6 +154,8 @@ function AudioPlayer(audioPlayerVM, audios) {
 
         progressBarVM.style.width = currentProgress + "%";
         progressControlVM.style.left = currentProgress + "%";
+
+        changeBufferedProgress();
     }
 
     function getRandomAudioNumber(){
@@ -167,7 +166,7 @@ function AudioPlayer(audioPlayerVM, audios) {
             ),
             audios.length - 1
         );
-        return  (newNumberAudio != previousNumberAudio) ? newNumberAudio : 0;
+        return  (newNumberAudio != previousNumberAudio) ? newNumberAudio : getRandomAudioNumber();
     }
 
     function changeCurrentTime(event) {
@@ -177,7 +176,6 @@ function AudioPlayer(audioPlayerVM, audios) {
         audio.currentTime = audio.duration * part;
 
         play();
-        isPlayingVM.checked = true;
     }
     function changeCurrentVolume(event) {
         event.stopPropagation();
@@ -195,6 +193,14 @@ function AudioPlayer(audioPlayerVM, audios) {
         audio.volume = currentVolume;
         volumeControlVM.style.top = (1 - currentVolume) * 100 + "%";
     }
+    function changeBufferedProgress() {
+        try {
+            currentBuffer = audio.buffered.end(0);
+        } catch(e) {
+            //console.log(e);
+        }
+        progressBufferedVM.style.width = Math.min(currentBuffer / audio.duration * 100, 100) + "%";
+    }
     function playRandomAudio() {
         numberAudio = getRandomAudioNumber();
         audio.src = audios[numberAudio].url;
@@ -204,10 +210,13 @@ function AudioPlayer(audioPlayerVM, audios) {
 
     
     audio.addEventListener('timeupdate', renderTime);
+    audio.addEventListener('progress', changeBufferedProgress);
 
-    audio.addEventListener('progress', function() {
-        console.log(audio.buffered.end(0) / audio.duration);
-        progressBufferedVM.style.width = Math.min(audio.buffered.end(0) / audio.duration * 100, 100) + "%";
+    audio.addEventListener('play', function () {
+        isPlayingVM.checked = true;
+    });
+    audio.addEventListener('pause', function () {
+        isPlayingVM.checked = false;
     });
 
     progressBarContainerVM.addEventListener('click', changeCurrentTime);

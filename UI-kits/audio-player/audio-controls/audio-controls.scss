@@ -71,6 +71,8 @@
         width: 15px;
         height: 75px;
 
+        cursor: default;
+
         &--active{
             display: block;
         }
@@ -96,6 +98,8 @@
         height: 15px;
         background-color: #3a3f5c;
         border-radius: 50%;
+
+        cursor: pointer;
 
         box-shadow: 0 0 20px rgba(#3a3f5c, 0.4);
     }
