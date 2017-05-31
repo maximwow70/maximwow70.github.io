@@ -11,7 +11,7 @@ function RangeControl(rangeControlVM, minValue, maxValue, points, barVM) {
     }
 
     function getNearPoint(proportion) {
-        if (that.range < proportion){
+        if (that.range < proportion) {
             var rightPoint = points[points.length - 1];
             for (var i = points.length - 1; i >= 0; i--) {
                 rightPoint = (points[i] > that.range) ? points[i] : rightPoint;
@@ -91,20 +91,13 @@ function RangeControl(rangeControlVM, minValue, maxValue, points, barVM) {
         }
     })
 
-     rangeControlVM.addEventListener('touchstart', function () {
-        document.addEventListener('touchmove', mouseMove);
-    });
-    document.addEventListener('touchend', function () {
-        document.removeEventListener('touchmove', mouseMove);
-    });
-
     this.setRange = function (proportion) {
         changeRange(proportion);
     }
 
-    if (points.length > 0){
-        for (var i = 0; i < points.length; i++){
-            if (this.range <= points[i]){
+    if (points.length > 0) {
+        for (var i = 0; i < points.length; i++) {
+            if (this.range <= points[i]) {
                 this.setRange(points[i]);
                 break;
             }
@@ -117,8 +110,6 @@ function RangeControl(rangeControlVM, minValue, maxValue, points, barVM) {
 
 function Range(rangeVM) {
     var that = this;
-
-    this.onchange = function () { };
 
     this.points = [];
     this.controls = [];
@@ -156,26 +147,35 @@ function Range(rangeVM) {
     }
 
     function onControlChange() {
-        var dataRange = that.getData();
+        var dataRange = that.getDataRange();
         if (dataRange.length === 1) {
             progressBarVM.style.width = dataRange[0] * 100 + "%";
         }
         if (dataRange.length === 2) {
             if (dataRange[0] > dataRange[1]) {
                 that.controls[0].setRange(dataRange[1]);
-            } 
+            }
             progressBarVM.style.width = (dataRange[1] - dataRange[0]) * 100 + "%";
             progressBarVM.style.left = dataRange[0] * 100 + "%";
         }
         that.onchange();
     }
 
-    this.getData = function () {
+    this.getDataRange = function () {
         var dataRange = [];
         for (var i = 0; i < that.controls.length; i++) {
             dataRange.push(that.controls[i].range);
         }
         return dataRange;
+    }
+    this.getData = function () {
+        var data = [];
+        for (var i = 0; i < that.controls.length; i++) {
+            data.push(
+                that.controls[i].range * (that.maxValue - that.minValue) + that.minValue
+            );
+        }
+        return data;
     }
 
     onControlChange();
@@ -183,7 +183,7 @@ function Range(rangeVM) {
 
 ; (function initAllRanges() {
 
-    var ranges = document.querySelectorAll('.range');
+    var ranges = document.querySelectorAll('.UI-kit > .range');
 
     for (var i = 0; i < ranges.length; i++) {
         new Range(ranges[i]);

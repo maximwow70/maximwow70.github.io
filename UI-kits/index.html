@@ -664,9 +664,30 @@
                     </div>
                 </div>
                 <div class="UI-kit">
-                    <div class="select_cost">
-                        <div class="select_cost-range">
-                            
+                    <div class="datapicker datapicker--cost">
+                        <h3 class="datapicker-title">cost</h3>
+                        <div class="datapicker-selects_group">
+                            <div class="select_number select_number--light">
+                                <input type="text" class="select_number-value" value="2" min="0" max="8000" step="5">
+                            </div>
+                            -
+                            <div class="select_number select_number--light">
+                                <input type="text" class="select_number-value" value="2" min="0" max="500" step="5">
+                            </div>
+                            $
+                        </div>
+                        <div class="datapicker-range">
+                            <div class="range range--adaptive" data-min="0" data-max="9000">
+                                <div class="range-bar"></div>
+                                <div class="range-progress_bar"></div>
+                                <button class="range-control" data-range="0.1">
+                                    <span class="range-value"></span>
+                                </button>
+                                <button class="range-control" data-range="0.7">
+                                    <span class="range-value"></span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

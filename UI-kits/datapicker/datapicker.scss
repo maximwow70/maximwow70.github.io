@@ -106,6 +106,19 @@
 
     }
 
+    &-selects_group{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+
+        color: #b6bed3;
+    }
+    &-range{
+        padding: 0 20px;
+    }
+
     &--sizes{
         .datapicker-is_picked{
             display: none;
@@ -126,4 +139,8 @@
         }
     }
 
+
+    &--cost{
+        padding-bottom: 20px;
+    }
 }
