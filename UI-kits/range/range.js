@@ -91,6 +91,13 @@ function RangeControl(rangeControlVM, minValue, maxValue, points, barVM) {
         }
     })
 
+     rangeControlVM.addEventListener('touchstart', function () {
+        document.addEventListener('touchmove', mouseMove);
+    });
+    document.addEventListener('touchend', function () {
+        document.removeEventListener('touchmove', mouseMove);
+    });
+
     this.setRange = function (proportion) {
         changeRange(proportion);
     }
