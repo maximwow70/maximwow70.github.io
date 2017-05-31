@@ -72,7 +72,7 @@
     position: relative;
     transition: 0.3s; }
   .select-value_list {
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     bottom: -20px;
     left: 0;
@@ -501,6 +501,88 @@
         margin-right: 0;
         width: 100%; } }
 
+.range {
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 15px; }
+  .range-bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 6px;
+    background-color: #F1F1F9;
+    border-radius: 5px; }
+  .range-progress_bar {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    -webkit-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    width: 0%;
+    height: 6px;
+    background-color: #4BE1AB;
+    border-radius: 5px; }
+  .range-point {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background-color: #3a3f5c;
+    border-radius: 50%; }
+  .range-control {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(58, 63, 92, 0.5);
+    transition: border-color 0.3s; }
+    .range-control:focus {
+      border-color: #3a3f5c; }
+      .range-control:focus .range-value {
+        display: inline-block; }
+  .range-value {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    padding: 0 2.5px;
+    background-color: #4BE1AB;
+    border-radius: 50%;
+    line-height: 35px;
+    color: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: none; }
+  .range--big {
+    width: 300px; }
+
 .search-input, .search-select, .search-btn {
   display: inline-block;
   vertical-align: middle; }
@@ -676,7 +758,8 @@
     border-radius: 5px;
     background-color: rgba(51, 51, 51, 0.7); }
   .item_card-name {
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    font-weight: normal; }
   .item_card-cost {
     color: #A1A6BA; }
   .item_card-new {
@@ -1039,9 +1122,9 @@
     position: absolute;
     top: 0px;
     left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-    -ms-transform: translate(-50%, 0%);
-    transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 15px;
     height: 15px;
     background-color: #3a3f5c;
@@ -1131,7 +1214,7 @@
   .audio_player-audio_progress {
     padding: 0 20px 20px 20px; }
 
-.colorpicker {
+.datapicker {
   display: inline-block;
   box-sizing: border-box;
   width: 280px;
@@ -1139,13 +1222,13 @@
   border-radius: 5px;
   box-shadow: 0 0 50px rgba(58, 63, 92, 0.4);
   color: #3a3f5c; }
-  .colorpicker-title {
+  .datapicker-title {
     padding: 20px;
     border-bottom: 1px solid #f1f1f3;
     font-size: 12px;
     text-transform: uppercase;
     text-align: left; }
-  .colorpicker-colors_list {
+  .datapicker-data_list {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -1162,7 +1245,7 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 20px 20px 0 20px; }
-  .colorpicker-color {
+  .datapicker-data {
     position: relative;
     margin-bottom: 20px;
     display: inline-block;
@@ -1173,37 +1256,38 @@
     background-color: #3a3f5c;
     outline: none;
     color: #FFF;
+    font-size: 16px;
     cursor: pointer; }
-    .colorpicker-color:not(:nth-child(5n)) {
+    .datapicker-data:not(:nth-child(5n)) {
       margin-right: 16.25px; }
-    .colorpicker-color--picked .colorpicker-is_picked {
+    .datapicker-data--picked .datapicker-is_picked {
       opacity: 1; }
-    .colorpicker-color--black {
+    .datapicker-data--black {
       background-color: #333; }
-    .colorpicker-color--white {
+    .datapicker-data--white {
       background-color: #FFF;
       border: 2px solid #3a3f5c;
       color: #3a3f5c; }
-    .colorpicker-color--red {
+    .datapicker-data--red {
       background-color: #ff5234; }
-    .colorpicker-color--yellow {
+    .datapicker-data--yellow {
       background-color: #f5c500; }
-    .colorpicker-color--blue {
+    .datapicker-data--blue {
       background-color: #2754eb; }
-    .colorpicker-color--green {
+    .datapicker-data--green {
       background-color: #01e2aa; }
-    .colorpicker-color--light_blue {
+    .datapicker-data--light_blue {
       background-color: #00deeb; }
-    .colorpicker-color--military {
+    .datapicker-data--military {
       background-color: #007236;
-      background-image: url(./colorpicker/src/military-icon1.png);
+      background-image: url(./datapicker/src/military-icon1.png);
       background-size: 225% 225%; }
-    .colorpicker-color--multicolor {
+    .datapicker-data--multicolor {
       background-color: transparent;
-      background-image: url(./colorpicker/src/colors_icon.png);
+      background-image: url(./datapicker/src/colors_icon.png);
       background-position: center;
       background-size: 150% 150%; }
-  .colorpicker-is_picked {
+  .datapicker-is_picked {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1213,6 +1297,23 @@
     font-size: 16px;
     transition: 0.3s;
     opacity: 0; }
+  .datapicker--sizes .datapicker-is_picked {
+    display: none; }
+  .datapicker--sizes .datapicker-data {
+    background-color: inherit;
+    border: 2px solid #B9BED1;
+    line-height: 32px;
+    color: #3a3f5c;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase; }
+    .datapicker--sizes .datapicker-data--picked {
+      box-shadow: 0 0 50px rgba(58, 63, 92, 0.4);
+      border: none; }
+
+@font-face {
+  font-family: roboto--r;
+  src: url("./Roboto-Regular.ttf"); }
 
 * {
   margin: 0;
@@ -1220,4 +1321,4 @@
   border: 0; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: roboto--r, Arial, Helvetica, sans-serif; }
