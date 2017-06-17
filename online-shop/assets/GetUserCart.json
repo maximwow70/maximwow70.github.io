@@ -1,0 +1,20 @@
+[
+    {
+        "id": "12qwe234",
+        "name": "Perfecto T-Shirt, mmm",
+        "description": "sadasdsa",
+        "photosUrl": ["item3.png"]
+    },
+    {
+        "id": "123e23q4",
+        "name": "Nice T-Shirt",
+        "description": "sadasdsa",
+        "photosUrl": ["item4.png"]
+    },
+    {
+        "id": "asdaqwe",
+        "name": "T-Shirt 'lol'",
+        "description": "sadasdsa",
+        "photosUrl": ["item2.png"]
+    }
+]

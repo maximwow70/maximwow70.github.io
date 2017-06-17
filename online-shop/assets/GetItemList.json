@@ -1,0 +1,57 @@
+[
+    {
+        "item": {
+            "id": "12331234",
+            "name": "kek",
+            "description": "sadasdsa",
+            "photosUrl": ["item4.png"]
+        },
+        "colors": [
+            "red",
+            "white"
+        ],
+        "sizes": [
+            "l",
+            "xl"
+        ],
+        "cost": 50,
+        "isNew": true
+    },
+    {
+        "item": {
+            "id": "asdwqe",
+            "name": "qweasdasd",
+            "description": "sadasdsa",
+            "photosUrl": ["item3.png"]
+        },
+        "colors": [
+            "red",
+            "white"
+        ],
+        "sizes": [
+            "s",
+            "m"
+        ],
+        "cost": 1234,
+        "isNew": false
+    },
+    {
+         "item": {
+            "id": "asd",
+            "name": "kek",
+            "description": "sadasdsa",
+            "photosUrl": ["item5.png"]
+        },
+        "colors": [
+            "red",
+            "white"
+        ],
+        "sizes": [
+            "s",
+            "m",
+            "l"
+        ],
+        "cost": 99.9,
+        "isNew": true
+    }
+]
