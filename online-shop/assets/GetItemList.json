@@ -53,5 +53,66 @@
         ],
         "cost": 99.9,
         "isNew": true
+    },
+    {
+         "item": {
+            "id": "123",
+            "name": "Leather Belt",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium enim accusamus neque blanditiis iure. Id error ullam, fugit quam laboriosam.",
+            "photosUrl": ["item-1-1.png", "item-1-2.png"]
+        },
+        "colors": [
+            "black",
+            "brown"
+        ],
+        "sizes": [
+            "s",
+            "m",
+            "l"
+        ],
+        "cost": 10,
+        "isNew": true
+    },
+    {
+         "item": {
+            "id": "1231",
+            "name": "Consectetur adipisicing",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium enim accusamus neque blanditiis iure. Id error ullam, fugit quam laboriosam.",
+            "photosUrl": ["item-3-1.png", "item-3-2.png"]
+        },
+        "colors": [
+            "black",
+            "red",
+            "green",
+            "blue",
+            "eggplant"
+        ],
+        "sizes": [
+            "m",
+            "l",
+            "xl"
+        ],
+        "cost": 12,
+        "isNew": false
+    },
+    {
+         "item": {
+            "id": "122sd",
+            "name": "Lasdjlwd sadasdas",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium enim accusamus neque blanditiis iure. Id error ullam, fugit quam laboriosam.",
+            "photosUrl": ["item-4-1.png"]
+        },
+        "colors": [
+            "black",
+            "white",
+            "eggplant"
+        ],
+        "sizes": [
+            "s",
+            "l",
+            "xl"
+        ],
+        "cost": 15,
+        "isNew": false
     }
 ]
