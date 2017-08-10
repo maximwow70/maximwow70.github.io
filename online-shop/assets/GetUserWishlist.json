@@ -22,5 +22,17 @@
         "name": "Amazing Shoes",
         "description": "sadasdsa",
         "photosUrl": ["item2.png"]
+    },
+    {
+        "id": "asdewq3123123",
+        "name": "Lorem lalka",
+        "description": "sadasdsa",
+        "photosUrl": ["item-1-1.png"]
+    },
+    {
+        "id": "asdqwe123",
+        "name": "Qqwer asldkasd",
+        "description": "sadasdsa",
+        "photosUrl": ["item-2-1.png"]
     }
 ]
