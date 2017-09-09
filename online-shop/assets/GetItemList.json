@@ -4,15 +4,29 @@
             "id": "12331234",
             "name": "kek",
             "description": "sadasdsa",
-            "photosUrl": ["item4.png"]
+            "photosUrl": [
+                "item4.png"
+            ]
         },
         "colors": [
-            "red",
-            "white"
+            {
+                "id": 0,
+                "name": "red"
+            },
+            {
+                "id": 1,
+                "name": "white"
+            }
         ],
         "sizes": [
-            "l",
-            "xl"
+            {
+                "id": 0,
+                "name": "l"
+            },
+            {
+                "id": 1,
+                "name": "xl"
+            }
         ],
         "cost": 50,
         "isNew": true
@@ -22,95 +36,156 @@
             "id": "asdwqe",
             "name": "qweasdasd",
             "description": "sadasdsa",
-            "photosUrl": ["item3.png"]
+            "photosUrl": [
+                "item3.png"
+            ]
         },
         "colors": [
-            "red",
-            "white"
+            {
+                "id": 0,
+                "name": "red"
+            },
+            {
+                "id": 3,
+                "name": "eggplant"
+            }
         ],
         "sizes": [
-            "s",
-            "m"
+            {
+                "id": 0,
+                "name": "l"
+            },
+            {
+                "id": 1,
+                "name": "xl"
+            }
         ],
         "cost": 1234,
         "isNew": false
     },
     {
-         "item": {
+        "item": {
             "id": "asd",
             "name": "kek",
             "description": "sadasdsa",
-            "photosUrl": ["item5.png"]
+            "photosUrl": [
+                "item5.png"
+            ]
         },
         "colors": [
-            "red",
-            "white"
+            {
+                "id": 4,
+                "name": "black"
+            },
+            {
+                "id": 3,
+                "name": "eggplant"
+            }
         ],
         "sizes": [
-            "s",
-            "m",
-            "l"
+            {
+                "id": 3,
+                "name": "s"
+            },
+            {
+                "id": 5,
+                "name": "xxl"
+            }
         ],
         "cost": 99.9,
         "isNew": true
     },
     {
-         "item": {
+        "item": {
             "id": "123",
             "name": "Leather Belt",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium enim accusamus neque blanditiis iure. Id error ullam, fugit quam laboriosam.",
-            "photosUrl": ["item-1-1.png", "item-1-2.png"]
+            "photosUrl": [
+                "item-1-1.png",
+                "item-1-2.png"
+            ]
         },
         "colors": [
-            "black",
-            "brown"
+            {
+                "id": 4,
+                "name": "black"
+            },
+            {
+                "id": 3,
+                "name": "eggplant"
+            }
         ],
         "sizes": [
-            "s",
-            "m",
-            "l"
+            
         ],
         "cost": 10,
         "isNew": true
     },
     {
-         "item": {
+        "item": {
             "id": "1231",
             "name": "Consectetur adipisicing",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium enim accusamus neque blanditiis iure. Id error ullam, fugit quam laboriosam.",
-            "photosUrl": ["item-3-1.png", "item-3-2.png"]
+            "photosUrl": [
+                "item-3-1.png",
+                "item-3-2.png"
+            ]
         },
         "colors": [
-            "black",
-            "red",
-            "green",
-            "blue",
-            "eggplant"
+            {
+                "id": 4,
+                "name": "black"
+            },
+            {
+                "id": 3,
+                "name": "eggplant"
+            },
+            {
+                "id": 1,
+                "name": "red"
+            },
+            {
+                "id": 3,
+                "name": "green"
+            },
+            {
+                "id": 10,
+                "name": "military"
+            },
+            {
+                "id": 3,
+                "name": "blue"
+            }
         ],
         "sizes": [
-            "m",
-            "l",
-            "xl"
         ],
         "cost": 12,
         "isNew": false
     },
     {
-         "item": {
+        "item": {
             "id": "122sd",
             "name": "Lasdjlwd sadasdas",
             "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium enim accusamus neque blanditiis iure. Id error ullam, fugit quam laboriosam.",
-            "photosUrl": ["item-4-1.png"]
+            "photosUrl": [
+                "item-4-1.png"
+            ]
         },
         "colors": [
-            "black",
-            "white",
-            "eggplant"
+            {
+                "id": 4,
+                "name": "black"
+            },
+            {
+                "id": 3,
+                "name": "white"
+            },
+            {
+                "id": 4,
+                "name": "red"
+            }
         ],
         "sizes": [
-            "s",
-            "l",
-            "xl"
         ],
         "cost": 15,
         "isNew": false

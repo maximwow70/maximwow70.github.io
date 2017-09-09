@@ -31,33 +31,69 @@
     },
     "itemCountDataList": [
         {
-            "color": "red",
-            "size": "xl",
+            "color": {
+                "id": 1,
+                "name": "red"
+            },
+            "size": {
+                "id": 0,
+                "name": "l"
+            },
             "count": 4
         },
         {
-            "color": "red",
-            "size": "l",
+            "color": {
+                "id": 1,
+                "name": "red"
+            },
+            "size": {
+                "id": 2,
+                "name": "xl"
+            },
             "count": 3
         },
         {
-            "color": "red",
-            "size": "s",
+            "color": {
+                "id": 1,
+                "name": "red"
+            },
+            "size": {
+                "id": 1,
+                "name": "s"
+            },
             "count": 2
         },
         {
-            "color": "black",
-            "size": "l",
+            "color": {
+                "id": 5,
+                "name": "black"
+            },
+            "size": {
+                "id": 1,
+                "name": "xl"
+            },
             "count": 15
         },
         {
-            "color": "black",
-            "size": "xl",
+            "color": {
+                "id": 5,
+                "name": "black"
+            },
+            "size": {
+                "id": 2,
+                "name": "s"
+            },
             "count": 1
         },
         {
-            "color": "white",
-            "size": "l",
+            "color": {
+                "id": 5,
+                "name": "white"
+            },
+            "size": {
+                "id": 2,
+                "name": "s"
+            },
             "count": 23
         }
     ],
