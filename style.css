@@ -16,9 +16,9 @@
     padding: 0;
     border: 0;
 }
-/* *:focus{
+*:focus{
     outline: none;
-} */
+}
 html,
 body{
     height: 100%;
