@@ -1,0 +1,49 @@
+@font-face{
+    font-family: neoneon;
+    src: url("./Neoneon.otf");
+}
+@font-face{
+    font-family: mont--r;
+    src: url("./Montserrat-Regular.otf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html,
+body{
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.home{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background-image: url("./bg2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.home--info{
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    color: #333;
+    text-align: center;
+}
+.home--title{
+    font-family: neoneon, Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: normal;
+}
+.home--description{
+    font-family: mont--r;
+    text-align: right;
+}
