@@ -1,14 +1,14 @@
 @font-face{
     font-family: name;
-    src: url("./Blocklyn-Grunge.otf");
+    src: url("./assets/fonts/Blocklyn-Grunge.otf");
 }
 @font-face{
     font-family: mont--r;
-    src: url("./Montserrat-Regular.otf");
+    src: url("./assets/fonts/Montserrat-Regular.otf");
 }
 @font-face{
     font-family: mont--r;
-    src: url("./Montserrat-Bold.otf");
+    src: url("./assets/fonts/Montserrat-Bold.otf");
 }
 
 *{
@@ -34,16 +34,29 @@ body{
 
     height: 100vh;
     padding: 0 200px;
-    background-image: url("./bg2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     
-    color: #FFF;
+    color: #333;
     font-family: mont--r, Arial, Helvetica, sans-serif;
 
     overflow: hidden;
 }
+
+.home--background-canvas{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* background-image: url("./assets/img/bg2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+
+    overflow: hidden;
+}
+
 .home--header{
     align-self: stretch;
 }
@@ -88,14 +101,15 @@ body{
     width: 30px;
     height: 4px;
 
-    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .menu-button--block:not(:last-child){
     margin-bottom: 4px;
 }
 .menu-button--block-fill{
     height: 100%;
-    background-color: #FFF;
+    background-color: #333;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
 
@@ -125,6 +139,7 @@ body{
     margin: 0 10px;
 
     display: inline-block;
+    width: 80px;
     padding-top: 40px;
 
     color: inherit;
@@ -132,6 +147,7 @@ body{
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
+    text-align: center;
     
     transition: 0.3s;
 }
@@ -160,7 +176,8 @@ body{
 
 }
 .language span:nth-child(2){
-    color: rgba(255, 255, 255, 0.4);
+    /* background-color: rgba(255, 255, 255, 0.4); */
+    color: rgba(0, 0, 0, 0.4);
 }
 
 
@@ -178,7 +195,8 @@ body{
     left: 150px;
 }
 .home--works-button.about .works-button{
-    border-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .home--works-button.works{
     right: 150px;
@@ -190,7 +208,8 @@ body{
 
     height: 50%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-color: #333;
 }
 .home--works-button-after{
     position: absolute;
@@ -199,7 +218,8 @@ body{
 
     height: 50%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-color: #333;
 }
 
 .about-button{
@@ -212,11 +232,12 @@ body{
     box-sizing: border-box;
     width: 250px;
     padding: 15px 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* border: 2px solid rgba(255, 255, 255, 0.2); */
+    border: 2px solid #333;
     background-color: transparent;
     /* background-color: #FFF; */
 
-    color: #FFF;
+    color: #333;
     font-family: inherit;
     font-size: 14px;
     text-transform: uppercase;
@@ -235,7 +256,8 @@ body{
 
     width: 100%;
     height: 0;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+    /* background-color: #333; */
 
     transition: 0.3s;
 }
@@ -253,11 +275,11 @@ body{
     box-sizing: border-box;
     width: 250px;
     padding: 15px 20px;
-    border: 2px solid #FFF;
+    border: 2px solid #333;
     background-color: transparent;
     /* background-color: #FFF; */
 
-    color: #FFF;
+    color: #333;
     font-family: inherit;
     font-size: 14px;
     text-transform: uppercase;
@@ -269,7 +291,7 @@ body{
     position: absolute;
 
     width: 2px;
-    background-color: #FFF;
+    background-color: #333;
 
     transition: 0.3s;
 }
